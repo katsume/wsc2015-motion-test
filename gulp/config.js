@@ -5,10 +5,14 @@ module.exports= {
 	dest: dest,
 	webpack: {
 		src: src+'/js/**',
+		entry: [
+			src+'/js/index.js'
+		],
 		webpack: {
-			entry: [
-				src+'/js/index.js'
-			]
+			module: {
+				loaders: [
+				]
+			}
 		},
 		uglify: false,
 		dest: dest+'/js'
@@ -18,15 +22,9 @@ module.exports= {
 		dest: dest
 	},
 	sass: {
-		src: src+'/sass/**',
+		src: src+'/sass/',
 		sass: {
 			style: 'expanded'
-		},
-		pleeease: {
-			autoprefixer: {
-				browsers: ['last 2 versions']
-			},
-			minifier: false,
 		},
 		dest: dest+'/css'
 	}

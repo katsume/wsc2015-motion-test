@@ -6,9 +6,9 @@ var gulp= require('gulp'),
 	config= require('../config').webpack
 
 gulp.task('webpack', function(){
-	return gulp.src(config.webpack.entry)
+	return gulp.src(config.entry)
 		.pipe(named())
-		.pipe(webpack())
+		.pipe(webpack(config.webpack))
 		.pipe(gulpIf(config.uglify, uglify()))
 		.pipe(gulp.dest(config.dest));
 });

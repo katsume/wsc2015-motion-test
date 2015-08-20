@@ -1,14 +1,12 @@
 var gulp= require('gulp'),
 	gulpIf= require('gulp-if'),
-	plumber= require('gulp-plumber'),
 	sass= require('gulp-ruby-sass'),
-	pleeease= require('gulp-pleeease'),
 	config= require('../config').sass;
 
 gulp.task('sass', function(){
-	return gulp.src(config.src)
-		.pipe(plumber())
-		.pipe(sass(config.sass))
-		.pipe(pleeease(config.pleeease))
+	return sass(config.src, config.sass)
+		.on('error', function (err) {
+			console.error('Error', err.message);
+		})
 		.pipe(gulp.dest(config.dest))
 });
