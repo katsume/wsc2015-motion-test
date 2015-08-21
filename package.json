@@ -16,5 +16,8 @@
     "start": "gulp",
     "clean": "gulp clean",
     "build": "gulp build"
+  },
+  "dependencies": {
+    "jquery": "^2.1.4"
   }
 }
