@@ -18,6 +18,6 @@
     "build": "gulp build"
   },
   "dependencies": {
-    "jquery": "^2.1.4"
+    "jquery": "^3.4.1"
   }
 }
